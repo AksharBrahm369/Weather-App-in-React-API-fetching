@@ -1,0 +1,242 @@
+.weather{
+    place-self: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg,#2f4680, #500ae4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.search-bar input{
+    padding-left: 25px;
+    border-radius: 40px;
+    outline: none;
+    color: #626262;
+    background: #ebfffc;
+    font-size: 18px;
+    height: 50px;
+}
+
+.search-bar img{
+    width: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
+}
+
+.weather-icon{
+    width: 150px;
+    margin: 30px 0px;
+}
+
+.temperature{
+    color: #fff;
+    font-size: 80px;
+    line-height: 1;
+}
+
+.location{
+    color: #fff;
+    font-size: 30px;
+   
+}
+
+.weather-data{
+    width: 100%;
+    margin-top: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-data col{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.weather-data .col span{
+    display: block;
+    font-size: 16px;
+}
+
+.weather-data .col img{
+    width: 30px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+/* Styling */
+
+/* 🌦️ Dynamic Background Styles */
+.weather {
+  width: 320px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: background 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ☀️ Clear sky */
+.weather.clear {
+  background: linear-gradient(to top, #f9d423, #ff4e50);
+}
+
+/* ☁️ Cloudy */
+.weather.clouds {
+  background: linear-gradient(to top, #757f9a, #d7dde8);
+}
+
+/* 🌧️ Rainy */
+.weather.rain {
+  background: linear-gradient(to top, #000046, #1cb5e0);
+}
+
+/* ❄️ Snowy */
+.weather.snow {
+  background: linear-gradient(to top, #83a4d4, #b6fbff);
+}
+
+/* 🌫️ Drizzle */
+.weather.drizzle {
+  background: linear-gradient(to top, #89f7fe, #66a6ff);
+}
+
+/* ❄️ Snow Animation Overlay */
+.weather.snow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.imgur.com/93dWzqf.png'); /* transparent snowflake pattern */
+  animation: snowFall 10s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes snowFall {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+/* 🌧️ Rain Animation Overlay */
+.weather.rain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.imgur.com/N9xYbHW.png'); /* rain streak pattern */
+  animation: rainFall 1s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rainFall {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 🔽 Dropdown (only visible on hover) */
+.dropdown-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.search-bar:hover .dropdown-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-top: 8px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
